@@ -18,11 +18,7 @@
 		
 		<form:form action="add-product" method="post" modelAttribute="product">
 			<table border="0">
-				<tr>
-					<td>Product ID:</td>
-					<td><form:input path="productId" /></td>
-				</tr>
-				
+
 				<tr>
 					<td>Product Code:</td>
 					<td><form:input path="productCode" /></td>
@@ -36,6 +32,11 @@
 				<tr>
 					<td>Product Price:</td>
 					<td><form:input path="price" /></td>
+				</tr>
+				
+				<tr>
+					<td>Product Rating:</td>
+					<td><form:input path="rating" /></td>
 				</tr>
 				
 				<tr>

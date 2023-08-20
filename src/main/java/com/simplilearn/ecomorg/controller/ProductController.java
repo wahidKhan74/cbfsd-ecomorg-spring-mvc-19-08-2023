@@ -4,25 +4,28 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.simplilearn.ecomorg.dao.ProductDao;
 import com.simplilearn.ecomorg.model.Product;
 
 @Controller
 @RequestMapping("/products")
 public class ProductController {
 	
-	List<Product>  products = new ArrayList<Product>();
+	@Autowired
+	ProductDao productDao;
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getAllProducts() {
 		ModelAndView modelAndView = new ModelAndView("list-products");
-		// products.add(new Product(100,"Apple Mac book","It is Laptop","APPQ1234E",null,0,50033,new Date(),5));
+		List<Product> products = productDao.getAllProducts();
 		modelAndView.addObject("products", products);
 		return modelAndView;
 	}
@@ -40,7 +43,12 @@ public class ProductController {
 	@RequestMapping(value = "/add-product", method = RequestMethod.POST)
 	public ModelAndView saveProduct(@ModelAttribute("product") Product product) {
 		ModelAndView modelAndView = new ModelAndView("list-products");
-		products.add(product);
+		// save product data
+		int rowsAffted = productDao.addProduct(product);
+		System.out.println("No of records added "+rowsAffted);
+		
+		// read all products
+		List<Product> products = productDao.getAllProducts();
 		modelAndView.addObject("products", products);
 		return modelAndView;
 	}
