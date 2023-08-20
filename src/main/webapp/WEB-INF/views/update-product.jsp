@@ -23,9 +23,14 @@
 		<div class="row">
 			<div class="col col-md-3"></div>
 			<div class="col col-md-6">
-				<h1>Add Product</h1>
-				<form:form action="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/add-product" method="post"
+				<h1>Update Product</h1>
+				<form:form action="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/update-product" method="post"
 					modelAttribute="product">
+					<div class="mb-3">
+						<label for="productId" class="form-label">Product Code:</label>
+						<form:input type="input" path="productId" class="form-control"
+							id="productCode" aria-describedby="productId"  readonly="true"  disabled="true"/>
+					</div>
 					<div class="mb-3">
 						<label for="productCode" class="form-label">Product Code:</label>
 						<form:input type="input" path="productCode" class="form-control"
@@ -54,7 +59,7 @@
 						<form:textarea class="form-control" path="productDescription"
 							id="productDescription"></form:textarea>
 					</div>
-					<button type="submit" class="btn btn-dark">Add Product</button>
+					<button type="submit" class="btn btn-dark">Update Product</button>
 				</form:form>
 			</div>
 			<div class="col col-md-3"></div>

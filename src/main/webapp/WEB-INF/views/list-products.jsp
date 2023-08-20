@@ -4,41 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-	#products {
-	  font-family: Arial, Helvetica, sans-serif;
-	  border-collapse: collapse;
-	  width: 100%;
-	}
-	
-	#products td, #products th {
-	  border: 1px solid #ddd;
-	  padding: 8px;
-	}
-	
-	#products tr:nth-child(even){background-color: #f2f2f2;}
-	
-	#products tr:hover {background-color: #ddd;}
-	
-	#products th {
-	  padding-top: 12px;
-	  padding-bottom: 12px;
-	  text-align: left;
-	  background-color: #04AA6D;
-	  color: white;
-	}
-
-</style>
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ecommer Webapp  | Product Management </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+ </head>
 <body>
 
 	<jsp:include page="../../index.jsp"></jsp:include>
-
+	<div class="container">
+	<div class="row">
 	<h1>List all products</h1>
-	<table id="products">
-		<thead>
+	<div class="col">
+	<a type="button" class="btn btn-dark end mt-2 mb-2 me-2" href="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/add-product" style=" float: right; ">Add Product</a>
+	<a type="button" class="btn btn-dark end mt-2 mb-2" href="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/delete-product" style=" float: right; ">Delete Product</a>
+	
+	<table class="table">
+  		<thead class="table-dark">
 			<tr>
 				<th>Product ID</th>
 				<th>Product Code</th>
@@ -47,6 +29,7 @@
 				<th>Product Price</th>
 				<th>Product Rating</th>
 				<th>Product AddedOn</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -59,9 +42,16 @@
 				<td>${prd.getPrice()}</td>
 				<td>${prd.getRating()}</td>
 				<td>${prd.getAddedOn()}</td>
+				<td>
+				<a type="button" class="btn btn-dark me-1 mt-1" href="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/delete/${prd.getProductId()}" >Delete</a>
+				<a type="button" class="btn btn-dark me-1 mt-1" href="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/update/${prd.getProductId()}" >Update</a>
+				<td>
 			</tr>
 			</core:forEach>		
 		</tbody>
 	</table>
+	</div>
+	</div>
+	</div>
 </body>
 </html>
