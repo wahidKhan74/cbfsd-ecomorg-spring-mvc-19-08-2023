@@ -1,7 +1,5 @@
 package com.simplilearn.ecomorg.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,10 +100,11 @@ public class ProductController {
 	// save a product
 	@RequestMapping(value = "/update-product", method = RequestMethod.POST)
 	public ModelAndView updateProduct(@ModelAttribute("product") Product product) {
+		System.out.println(product);
 		ModelAndView modelAndView = new ModelAndView("list-products");
 		// save product data
 		int rowsAffted = productDao.updateProduct(product);
-		System.out.println("No of records added " + rowsAffted);
+		System.out.println("No of records updated " + rowsAffted);
 
 		// read all products
 		List<Product> products = productDao.getAllProducts();

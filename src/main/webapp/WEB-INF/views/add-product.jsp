@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<jsp:include page="../../index.jsp"></jsp:include>
+	<jsp:include page="../../navbar.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
 			<div class="col col-md-3"></div>

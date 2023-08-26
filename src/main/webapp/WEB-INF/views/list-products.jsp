@@ -11,7 +11,7 @@
  </head>
 <body>
 
-	<jsp:include page="../../index.jsp"></jsp:include>
+	<jsp:include page="../../navbar.jsp"></jsp:include>
 	<div class="container">
 	<div class="row">
 	<h1>List all products</h1>

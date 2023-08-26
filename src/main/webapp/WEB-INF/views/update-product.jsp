@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<jsp:include page="../../index.jsp"></jsp:include>
+	<jsp:include page="../../navbar.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
 			<div class="col col-md-3"></div>
@@ -27,9 +27,9 @@
 				<form:form action="/cbfsd-ecomorg-spring-mvc-19-08-2023/products/update-product" method="post"
 					modelAttribute="product">
 					<div class="mb-3">
-						<label for="productId" class="form-label">Product Code:</label>
+						<label for="productId" class="form-label">Product Id:</label>
 						<form:input type="input" path="productId" class="form-control"
-							id="productCode" aria-describedby="productId"  readonly="true"  disabled="true"/>
+							id="productCode" aria-describedby="productId"  />
 					</div>
 					<div class="mb-3">
 						<label for="productCode" class="form-label">Product Code:</label>
