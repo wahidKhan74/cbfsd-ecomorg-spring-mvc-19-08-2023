@@ -29,7 +29,7 @@
 					<div class="mb-3">
 						<label for="productId" class="form-label">Product Id:</label>
 						<form:input type="input" path="productId" class="form-control"
-							id="productCode" aria-describedby="productId"  />
+							id="productCode" aria-describedby="productId"  readonly="true" />
 					</div>
 					<div class="mb-3">
 						<label for="productCode" class="form-label">Product Code:</label>
